@@ -1,0 +1,163 @@
+@font-face {
+   font-family: Blockletter; 
+   src: url('../fonts/Blockletter.otf'); 
+} 
+@font-face {
+   font-family: Questrial-Regular; 
+   src: url('../fonts/Questrial-Regular.ttf'); 
+} 
+
+html {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+   padding: 0;
+   margin: 0;
+}
+
+#indexbody {
+   min-height:100%;
+   height:100%;
+   width: 100%;
+   background-image: url("../images/indexwallpaper.jpg");
+   background-size:cover;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-position:center;
+}
+
+#indexbody.original {
+   transition-duration: 300ms;
+   transition-timing-function: ease-in;
+   transition-delay: 100ms;
+   background-image: url("../images/indexwallpaper.jpg");
+}
+
+#indexbody.nba {
+   transition-duration: 300ms;
+   transition-timing-function: ease-in;
+   transition-delay: 100ms;
+   background-image: url("../images/kawhi.jpg");
+}
+
+#indexbody.soccer {
+   transition-duration: 300ms;
+   transition-timing-function: ease-in;
+   transition-delay: 100ms;
+   background-image: url("../images/messi.jpg");
+}
+
+#indexbody.nfl {
+   transition-duration: 300ms;
+   transition-timing-function: ease-in;
+   transition-delay: 100ms;
+   background-image: url("../images/marshawn.jpg");
+}
+
+#indexbody.mlb {
+   transition-duration: 300ms;
+   transition-timing-function: ease-in;
+   transition-delay: 100ms;
+   background-image: url("../images/santana.jpg");
+}
+
+#indexnav {
+   position:fixed;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   width:100%;
+   height:100%;
+}
+
+#indexul {
+   height:45px;
+   width: 500px;  
+}
+
+.indexlist {
+   width:100px;
+   height:35px;
+   display: inline-block;
+   list-style: none;
+   background-color:black;
+   color:#ECF0F1;
+   border:1px;
+   border-style:solid;
+   text-align: center;
+}
+
+.indexlist a:hover {
+   width:100px;
+   background-color:#FEFF32;
+   color:black;
+}
+
+.indexlink {
+   text-decoration: none;
+   color: white;
+   display: inline-block;
+   font-family: 'Blockletter';
+   font-size: 18px;
+   letter-spacing: 4px; 
+   line-height:35px;
+}
+
+#navheader {
+   margin-top:-16px; 
+   height:30px;
+   width:100%;
+   background-color:red;
+}
+
+#navheader nav {
+   height:100%;
+   color:black;
+   border-bottom:solid;
+   border-width:1px;
+}
+
+.navlist {
+   display: inline-block;
+   list-style: none;
+}
+
+.navlist a:hover {
+   color:black;
+}
+
+.navlink {
+   text-decoration: none;
+   color: blue;
+   font-family: 'Questrial-Regular';
+   font-size: 15px;
+   font-weight:bold;
+   letter-spacing: 2px; 
+   line-height:30px;
+   margin-right:15px;
+}
+
+#main-content {
+   min-height:100%;
+   width:100%;
+}
+
+#form {
+   margin-top:-18px; 
+   height:70px;
+   width:100%;
+   background-color:yellow;
+}
+
+#text {
+   text-align: center;
+}
+
+#nbalist {
+   width:150px;
+   margin-left:40%;
+}
