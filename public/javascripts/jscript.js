@@ -38,6 +38,14 @@ $(document).ready(function(){
       }
    );
 
+   document.getElementById('nbalist').onchange = function() {
+      var e = document.getElementById('nbalist');
+      var team = e.options[e.selectedIndex].value;
+      var teamformat = team.replace(/ /g, '');
+      console.log(teamformat);
+      var url = '../images/nbalogos/'+teamformat +'.jpg';
+      logo.src = url;
+   }  
 
    // nba.com api call
    $("#nbasearch").on("submit",function(e){

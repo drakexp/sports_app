@@ -11,260 +11,251 @@
 </header>
 
 <div id = "main-content"> 
-   <form id = "nbasearch"> 
-      <h3 id = 'text'> Select a Team </h3>
-      <select id = "nbalist" required>
-         <option> </option>
-         {{#each data}}
-         <option id = {{this.teamid}}> {{this.teamname}}</option>
-         {{/each}}
-      </select>
-      <button type="submit">Submit</button>
-   </form>
+   <div id = "top">
+      <div id = "imgcontainer">
+         <img id = "logo" src="/images/nbalogos/NBALogo.jpg">
+      </div>
+      <div>
+         <form id = "nbasearch"> 
+         <h3 id = 'text'> Select a Team </h3>
+         <select id = "nbalist" required>
+            <option> </option>
+            {{#each data}}
+            <option id = {{this.teamid}}> {{this.teamname}}</option>
+            {{/each}}
+         </select>
+         <button type="submit">Submit</button>
+         </form>
+      </div>
+   </div>
    <div id = "statcontainer"> 
       <h1 id = "nbayear"> 2015-2016</h1>
-      <ul id = "nbastats">
-         <li class = "statcol" id = "large">
-            <ul id = "nbaplayername">
-               <li>Player Name</li>
-               <li id ='p1'></li> 
-               <li id ='p2'></li>  
-               <li id ='p3'></li>  
-               <li id ='p4'></li>  
-               <li id ='p5'></li>  
-               <li id ='p6'></li>  
-               <li id ='p7'></li>  
-               <li id ='p8'></li>  
-               <li id ='p9'></li>  
-               <li id ='p10'></li>  
-               <li id ='p11'></li>  
-               <li id ='p12'></li>  
-               <li id ='p13'></li>
-               <li id ='p14'></li>  
-               <li id ='p15'></li>      
-            </ul>
-         </li>
-         <li class = "statcol" id = 'small'>
-            <ul id = "nbaplayerage">
-               <li>Age</li>
-               <li id ='a1'></li> 
-               <li id ='a2'></li>  
-               <li id ='a3'></li>  
-               <li id ='a4'></li>  
-               <li id ='a5'></li>  
-               <li id ='a6'></li>  
-               <li id ='a7'></li>  
-               <li id ='a8'></li>  
-               <li id ='a9'></li>  
-               <li id ='a10'></li>  
-               <li id ='a11'></li>  
-               <li id ='a12'></li>  
-               <li id ='a13'></li>
-               <li id ='a14'></li>  
-               <li id ='a15'></li>  
-            </ul>
-         </li>
-         <li class = "statcol">
-            <ul id = "nbamin">
-               <li>MPG</li>
-               <li id ='m1'></li> 
-               <li id ='m2'></li>  
-               <li id ='m3'></li>  
-               <li id ='m4'></li>  
-               <li id ='m5'></li>  
-               <li id ='m6'></li>  
-               <li id ='m7'></li>  
-               <li id ='m8'></li>  
-               <li id ='m9'></li>  
-               <li id ='m10'></li>  
-               <li id ='m11'></li>  
-               <li id ='m12'></li>  
-               <li id ='m13'></li>
-               <li id ='m14'></li>  
-               <li id ='m15'></li> 
-            </ul>
-         </li>
-         <li class = "statcol">
-            <ul id = "nbafga">
-               <li>FGA</li>
-               <li id ='fg1'></li> 
-               <li id ='fg2'></li>  
-               <li id ='fg3'></li>  
-               <li id ='fg4'></li>  
-               <li id ='fg5'></li>  
-               <li id ='fg6'></li>  
-               <li id ='fg7'></li>  
-               <li id ='fg8'></li>  
-               <li id ='fg9'></li>  
-               <li id ='fg10'></li>  
-               <li id ='fg11'></li>  
-               <li id ='fg12'></li>  
-               <li id ='fg13'></li>
-               <li id ='fg14'></li>  
-               <li id ='fg15'></li> 
-            </ul>
-         </li>
-         <li class = "statcol">
-            <ul id = "nbafgm">
-               <li>FGM</li>
-               <li id ='fgm1'></li> 
-               <li id ='fgm2'></li>  
-               <li id ='fgm3'></li>  
-               <li id ='fgm4'></li>  
-               <li id ='fgm5'></li>  
-               <li id ='fgm6'></li>  
-               <li id ='fgm7'></li>  
-               <li id ='fgm8'></li>  
-               <li id ='fgm9'></li>  
-               <li id ='fgm10'></li>  
-               <li id ='fgm11'></li>  
-               <li id ='fgm12'></li>  
-               <li id ='fgm13'></li>
-               <li id ='fgm14'></li>  
-               <li id ='fgm15'></li> 
-            </ul>
-         </li>
-         <li class = "statcol">
-            <ul id = "nbafgp">
-               <li>FG PCT</li>
-               <li id ='fgp1'></li> 
-               <li id ='fgp2'></li>  
-               <li id ='fgp3'></li>  
-               <li id ='fgp4'></li>  
-               <li id ='fgp5'></li>  
-               <li id ='fgp6'></li>  
-               <li id ='fgp7'></li>  
-               <li id ='fgp8'></li>  
-               <li id ='fgp9'></li>  
-               <li id ='fgp10'></li>  
-               <li id ='fgp11'></li>  
-               <li id ='fgp12'></li>  
-               <li id ='fgp13'></li>
-               <li id ='fgp14'></li>  
-               <li id ='fgp15'></li> 
-            </ul>
-         </li>
-         <li class = "statcol">
-            <ul id = "nbareb">
-               <li>REB</li>
-               <li id ='r1'></li> 
-               <li id ='r2'></li>  
-               <li id ='r3'></li>  
-               <li id ='r4'></li>  
-               <li id ='r5'></li>  
-               <li id ='r6'></li>  
-               <li id ='r7'></li>  
-               <li id ='r8'></li>  
-               <li id ='r9'></li>  
-               <li id ='r10'></li>  
-               <li id ='r11'></li>  
-               <li id ='r12'></li>  
-               <li id ='r13'></li>
-               <li id ='r14'></li>  
-               <li id ='r15'></li> 
-            </ul>
-         </li>
-         <li class = "statcol">
-            <ul id = "nbaast">
-               <li>AST</li>
-               <li id ='as1'></li> 
-               <li id ='as2'></li>  
-               <li id ='as3'></li>  
-               <li id ='as4'></li>  
-               <li id ='as5'></li>  
-               <li id ='as6'></li>  
-               <li id ='as7'></li>  
-               <li id ='as8'></li>  
-               <li id ='as9'></li>  
-               <li id ='as10'></li>  
-               <li id ='as11'></li>  
-               <li id ='as12'></li>  
-               <li id ='as13'></li>
-               <li id ='as14'></li>  
-               <li id ='as15'></li> 
-            </ul>
-         </li>
-         <li class = "statcol">
-            <ul id = "nbastl">
-               <li>STL</li>
-               <li id ='st1'></li> 
-               <li id ='st2'></li>  
-               <li id ='st3'></li>  
-               <li id ='st4'></li>  
-               <li id ='st5'></li>  
-               <li id ='st6'></li>  
-               <li id ='st7'></li>  
-               <li id ='st8'></li>  
-               <li id ='st9'></li>  
-               <li id ='st10'></li>  
-               <li id ='st11'></li>  
-               <li id ='st12'></li>  
-               <li id ='st13'></li>
-               <li id ='st14'></li>  
-               <li id ='st15'></li> 
-            </ul>
-         </li>
-         <li class = "statcol">
-            <ul id = "nbablk">
-               <li>BLK</li>
-               <li id ='b1'></li> 
-               <li id ='b2'></li>  
-               <li id ='b3'></li>  
-               <li id ='b4'></li>  
-               <li id ='b5'></li>  
-               <li id ='b6'></li>  
-               <li id ='b7'></li>  
-               <li id ='b8'></li>  
-               <li id ='b9'></li>  
-               <li id ='b10'></li>  
-               <li id ='b11'></li>  
-               <li id ='b12'></li>  
-               <li id ='b13'></li>
-               <li id ='b14'></li>  
-               <li id ='b15'></li> 
-            </ul>
-         </li>
-         <li class = "statcol">
-            <ul id = "nbato">
-               <li>TOV</li>
-               <li id ='t1'></li> 
-               <li id ='t2'></li>  
-               <li id ='t3'></li>  
-               <li id ='t4'></li>  
-               <li id ='t5'></li>  
-               <li id ='t6'></li>  
-               <li id ='t7'></li>  
-               <li id ='t8'></li>  
-               <li id ='t9'></li>  
-               <li id ='t10'></li>  
-               <li id ='t11'></li>  
-               <li id ='t12'></li>  
-               <li id ='t13'></li>
-               <li id ='t14'></li>  
-               <li id ='t15'></li> 
-            </ul>
-         </li>
-         <li class = "statcol">
-            <ul id = "nbapts">
-               <li>PTS</li>
-               <li id ='pt1'></li> 
-               <li id ='pt2'></li>  
-               <li id ='pt3'></li>  
-               <li id ='pt4'></li>  
-               <li id ='pt5'></li>  
-               <li id ='pt6'></li>  
-               <li id ='pt7'></li>  
-               <li id ='pt8'></li>  
-               <li id ='pt9'></li>  
-               <li id ='pt10'></li>  
-               <li id ='pt11'></li>  
-               <li id ='pt12'></li>  
-               <li id ='pt13'></li>
-               <li id ='pt14'></li>  
-               <li id ='pt15'></li> 
-            </ul>
-         </li>   
-      </ul>   
+      <table>
+         <tr id = "toprow">
+            <td>Player Name </td>
+            <td>Age</td>
+            <td>MPG</td>
+            <td>FGA</td>
+            <td>FGM</td>
+            <td>FG PCT</td>
+            <td>REB</td>
+            <td>AST</td>
+            <td>STL</td>
+            <td>BLK</td>
+            <td>TOV</td>
+            <td>PTS</td>
+         </tr>
+         <tr>
+            <td id ='p1'>-</td> 
+            <td id ='a1'>-</td>  
+            <td id ='m1'>-</td>  
+            <td id ='fg1'>-</td>  
+            <td id ='fgm1'>-</td>  
+            <td id ='fgp1'>-</td>  
+            <td id ='r1'>-</td>  
+            <td id ='as1'>-</td>  
+            <td id ='st1'>-</td>  
+            <td id ='b1'>-</td>  
+            <td id ='t1'>-</td>  
+            <td id ='pt1'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p2'>-</td> 
+            <td id ='a2'>-</td>  
+            <td id ='m2'>-</td>  
+            <td id ='fg2'>-</td>  
+            <td id ='fgm2'>-</td>  
+            <td id ='fgp2'>-</td>  
+            <td id ='r2'>-</td>  
+            <td id ='as2'>-</td>  
+            <td id ='st2'>-</td>  
+            <td id ='b2'>-</td>  
+            <td id ='t2'>-</td>  
+            <td id ='pt2'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p3'>-</td> 
+            <td id ='a3'>-</td>  
+            <td id ='m3'>-</td>  
+            <td id ='fg3'>-</td>  
+            <td id ='fgm3'>-</td>  
+            <td id ='fgp3'>-</td>  
+            <td id ='r3'>-</td>  
+            <td id ='as3'>-</td>  
+            <td id ='st3'>-</td>  
+            <td id ='b3'>-</td>  
+            <td id ='t3'>-</td>  
+            <td id ='pt3'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p4'>-</td> 
+            <td id ='a4'>-</td>  
+            <td id ='m4'>-</td>  
+            <td id ='fg4'>-</td>  
+            <td id ='fgm4'>-</td>  
+            <td id ='fgp4'>-</td>  
+            <td id ='r4'>-</td>  
+            <td id ='as4'>-</td>  
+            <td id ='st4'>-</td>  
+            <td id ='b4'>-</td>  
+            <td id ='t4'>-</td>  
+            <td id ='pt4'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p5'>-</td> 
+            <td id ='a5'>-</td>  
+            <td id ='m5'>-</td>  
+            <td id ='fg5'>-</td>  
+            <td id ='fgm5'>-</td>  
+            <td id ='fgp5'>-</td>  
+            <td id ='r5'>-</td>  
+            <td id ='as5'>-</td>  
+            <td id ='st5'>-</td>  
+            <td id ='b5'>-</td>  
+            <td id ='t5'>-</td>  
+            <td id ='pt5'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p6'>-</td> 
+            <td id ='a6'>-</td>  
+            <td id ='m6'>-</td>  
+            <td id ='fg6'>-</td>  
+            <td id ='fgm6'>-</td>  
+            <td id ='fgp6'>-</td>  
+            <td id ='r6'>-</td>  
+            <td id ='as6'>-</td>  
+            <td id ='st6'>-</td>  
+            <td id ='b6'>-</td>  
+            <td id ='t6'>-</td>  
+            <td id ='pt6'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p7'>-</td> 
+            <td id ='a7'>-</td>  
+            <td id ='m7'>-</td>  
+            <td id ='fg7'>-</td>  
+            <td id ='fgm7'>-</td>  
+            <td id ='fgp7'>-</td>  
+            <td id ='r7'>-</td>  
+            <td id ='as7'>-</td>  
+            <td id ='st7'>-</td>  
+            <td id ='b7'>-</td>  
+            <td id ='t7'>-</td>  
+            <td id ='pt7'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p8'>-</td> 
+            <td id ='a8'>-</td>  
+            <td id ='m8'>-</td>  
+            <td id ='fg8'>-</td>  
+            <td id ='fgm8'>-</td>  
+            <td id ='fgp8'>-</td>  
+            <td id ='r8'>-</td>  
+            <td id ='as8'>-</td>  
+            <td id ='st8'>-</td>  
+            <td id ='b8'>-</td>  
+            <td id ='t8'>-</td>  
+            <td id ='pt8'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p9'>-</td> 
+            <td id ='a9'>-</td>  
+            <td id ='m9'>-</td>  
+            <td id ='fg9'>-</td>  
+            <td id ='fgm9'>-</td>  
+            <td id ='fgp9'>-</td>  
+            <td id ='r9'>-</td>  
+            <td id ='as9'>-</td>  
+            <td id ='st9'>-</td>  
+            <td id ='b9'>-</td>  
+            <td id ='t9'>-</td>  
+            <td id ='pt9'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p10'>-</td> 
+            <td id ='a10'>-</td>  
+            <td id ='m10'>-</td>  
+            <td id ='fg10'>-</td>  
+            <td id ='fgm10'>-</td>  
+            <td id ='fgp10'>-</td>  
+            <td id ='r10'>-</td>  
+            <td id ='as10'>-</td>  
+            <td id ='st10'>-</td>  
+            <td id ='b10'>-</td>  
+            <td id ='t10'>-</td>  
+            <td id ='pt10'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p11'>-</td> 
+            <td id ='a11'>-</td>  
+            <td id ='m11'>-</td>  
+            <td id ='fg11'>-</td>  
+            <td id ='fgm11'>-</td>  
+            <td id ='fgp11'>-</td>  
+            <td id ='r11'>-</td>  
+            <td id ='as11'>-</td>  
+            <td id ='st11'>-</td>  
+            <td id ='b11'>-</td>  
+            <td id ='t11'>-</td>  
+            <td id ='pt11'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p12'>-</td> 
+            <td id ='a12'>-</td>  
+            <td id ='m12'>-</td>  
+            <td id ='fg12'>-</td>  
+            <td id ='fgm12'>-</td>  
+            <td id ='fgp12'>-</td>  
+            <td id ='r12'>-</td>  
+            <td id ='as12'>-</td>  
+            <td id ='st12'>-</td>  
+            <td id ='b12'>-</td>  
+            <td id ='t12'>-</td>  
+            <td id ='pt12'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p13'>-</td> 
+            <td id ='a13'>-</td>  
+            <td id ='m13'>-</td>  
+            <td id ='fg13'>-</td>  
+            <td id ='fgm13'>-</td>  
+            <td id ='fgp13'>-</td>  
+            <td id ='r13'>-</td>  
+            <td id ='as13'>-</td>  
+            <td id ='st13'>-</td>  
+            <td id ='b13'>-</td>  
+            <td id ='t13'>-</td>  
+            <td id ='pt13'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p14'>-</td> 
+            <td id ='a14'>-</td>  
+            <td id ='m14'>-</td>  
+            <td id ='fg14'>-</td>  
+            <td id ='fgm14'>-</td>  
+            <td id ='fgp14'>-</td>  
+            <td id ='r14'>-</td>  
+            <td id ='as14'>-</td>  
+            <td id ='st14'>-</td>  
+            <td id ='b14'>-</td>  
+            <td id ='t14'>-</td>  
+            <td id ='pt14'>-</td>  
+         </tr>
+         <tr>
+            <td id ='p15'>-</td> 
+            <td id ='a15'>-</td>  
+            <td id ='m15'>-</td>  
+            <td id ='fg15'>-</td>  
+            <td id ='fgm15'>-</td>  
+            <td id ='fgp15'>-</td>  
+            <td id ='r15'>-</td>  
+            <td id ='as15'>-</td>  
+            <td id ='st15'>-</td>  
+            <td id ='b15'>-</td>  
+            <td id ='t15'>-</td>  
+            <td id ='pt15'>-</td>  
+         </tr> 
+      </table>
    </div> 
 
 </div>
