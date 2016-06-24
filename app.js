@@ -2,8 +2,8 @@ var express = require('express');
 var promise = require('bluebird');
 var bodyParser = require('body-parser');
 var path = require('path');
-
 var app = express();
+var request = require('request');
 
 // body-parser for url encoded form data
 app.use(bodyParser.json());
@@ -47,21 +47,6 @@ app.get('/nfl',function(req,res,next){
 
 app.get('/soccer',function(req,res,next){
   res.render('soccer');
-});
-
-// db methods
-
-// get one nba team
-app.get('/nba/:id', function(req,res,next){
-  var teamname = req.params.id;
-  console.log(teamname);
-  db.one('SELECT * FROM nbateams WHERE teamname = $1', teamname)
-  .then(function (team) {
-    console.log(team);
-  })
-  .catch(function(err){
-  return next(err);
-  });
 });
 
 
