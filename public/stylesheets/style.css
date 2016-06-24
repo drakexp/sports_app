@@ -177,7 +177,7 @@ body {
 }
 
 #nbastats{
-   width:1200px;
+   width:1400px;
    height:100%;
    margin-left:-80px;
    margin-right:160px;
@@ -185,9 +185,16 @@ body {
 }
 
 .statcol {
-   width:100px;
    display: inline-block;
    list-style: none;
+}
+
+#large {
+   width:150px;
+}
+
+#small {
+   width: 30px;
 }
 
 

@@ -43,66 +43,77 @@ $(document).ready(function(){
    $("#nbasearch").on("submit",function(e){
       e.preventDefault();
       var teamID = $(this).find(':selected')[0].id;
+      var playerName = new Array(); 
+      var playerID = new Array();      
       $.ajax({
          type: "GET",
-         dataType: 'jsonp',
-         crossDomain: true,   
+
+         dataType: 'jsonp',  
          url: 'http://stats.nba.com/stats/commonteamroster/?',
          data: {
             teamid: teamID,
             season: '2015-16' 
          },
-         success: function (result) {
-            var playerName = new Array(); 
-            var playerID = new Array();
-            for(var i = 0; i < result.resultSets[0].rowSet.length; i++) {
-               console.log(result.resultSets[0].rowSet[i][3]);
-               playerName[i] = result.resultSets[0].rowSet[i][3];
-               playerID[i] = result.resultSets[0].rowSet[i][12];
+         success: function (r) {
+            for(var i = 0; i < r.resultSets[0].rowSet.length; i++) {
+               playerName[i] = r.resultSets[0].rowSet[i][3];
+               playerID[i] = r.resultSets[0].rowSet[i][12];
                var name = document.getElementById("p"+(i+1));
                name.textContent = playerName[i];
-               var x = result.resultSets[0].rowSet.length-1;
-               $.ajax({
-                  type: "GET",
-                  dataType: 'jsonp',
-                  crossDomain: true,   
-                  url: 'http://stats.nba.com/stats/playerprofilev2/?',
-                  data: {
-                     playerid: playerID[i],
-                     PerMode: 'PerGame'
-                  },
-                  success: function (result) {
-                     console.log(x);
-                     var age = document.getElementById("a"+(x+1));
-                     age.textContent = result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][5];
-                     console.log(result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][5]);
-
-                        $('#statcontainer').show();
-                  }
-               })
             }
+            statIterator(playerID);
+         },
+         complete:function(){
+               showstats();
          }
-      });        
-   }); // search
 
+      })
+
+   }) // search
 
 });
 
-function addToStats() {
-  var ul = document.getElementById("playlist");
-  var li = document.createElement("li");
-  var a = document.createElement("a");
-  a.setAttribute("href", "#");
-  a.setAttribute("id",playlist.plist.length);
-  a.setAttribute("class", "plisttitle");
-  a.textContent = playlist.plist[playlist.plist.length-1].replace(/^.*[\\\/]/, '');
-  a.addEventListener("click", function(e) {  // add click listener
-   var titles = document.getElementsByClassName("plisttitle");
-   for(var i = 0; i < titles.length; i++) {
-      document.getElementById(titles[i].id).style.color = "black";
-   } // reset
-   document.getElementById(this.id).style.color = "red";
-   playlist.playlistSong(this.id)});
-  li.appendChild(a);
-  ul.appendChild(li);
+function statIterator(id) {
+   for(var j = 0; j <id.length; j++) 
+      addToStats(id,j)
+}
+
+function addToStats(id,j) {
+   $.ajax({
+      type: "GET",
+      dataType: 'jsonp',
+      url: 'http://stats.nba.com/stats/playerprofilev2/?',
+      data: {
+         playerid: id[j],
+         PerMode: 'PerGame'
+      },
+      success: function (result) {
+         var a =false;
+         var age = document.getElementById("a"+(j+1));
+         var mpg = document.getElementById("m"+(j+1));
+         var fga = document.getElementById("fg"+(j+1));
+         var fgm = document.getElementById("fgm"+(j+1));
+         var fgp = document.getElementById("fgp"+(j+1));
+         var reb = document.getElementById("r"+(j+1));
+         var ast = document.getElementById("as"+(j+1));
+         var stl = document.getElementById("st"+(j+1));
+         var blk = document.getElementById("b"+(j+1));
+         var tov = document.getElementById("t"+(j+1));
+         var pts = document.getElementById("pt"+(j+1));
+         age.textContent = result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][5];
+         mpg.textContent = result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][8];
+         fga.textContent = result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][10];
+         fgm.textContent = result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][9]; 
+         fgp.textContent = result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][11];
+         reb.textContent = result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][20];
+         ast.textContent = result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][21];
+         stl.textContent = result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][22];
+         blk.textContent = result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][23]; 
+         tov.textContent = result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][24];
+         pts.textContent = result.resultSets[0].rowSet[result.resultSets[0].rowSet.length-1][26];
+      }
+   })
+}
+function showstats() {
+            $('#statcontainer').show();
 }
